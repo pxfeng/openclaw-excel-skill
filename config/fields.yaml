@@ -1,0 +1,161 @@
+fields:
+  basic:
+    - name: "商品销售名称"
+      key: "goods_name"
+      required: true
+      description: "商品销售名称，不超过200个字符"
+      type: "text"
+
+    - name: "销售分类"
+      key: "sales_category"
+      required: false
+      description: "必须从以下选项中选择，输入其他值会导致系统报错"
+      type: "select"
+      options:
+        - "贝果 Bagel"
+        - "可颂 Croissant"
+        - "丹麦酥 Danish"
+        - "蛋挞 Tart"
+        - "法式面包 French"
+        - "日式面包 Japan"
+        - "三明治San"
+        - "吐司 Toast"
+        - "甜品 Dessert"
+        - "经典咖啡 Classic"
+        - "特调咖啡 Specialty"
+        - "酸奶奶昔 Shake"
+        - "气泡水 Sparking"
+        - "英式茶 English Tea"
+        - "开放三明治"
+        - "能量餐"
+
+    - name: "线上分类"
+      key: "online_category"
+      required: false
+      description: "必须从以下选项中选择，输入其他值会导致系统报错"
+      type: "select"
+      options:
+        - "贝果 Bagel"
+        - "可颂 Croissant"
+        - "丹麦酥 Danish"
+        - "蛋挞 Tart"
+        - "法式面包 French"
+        - "日式面包 Japan"
+        - "三明治San"
+        - "吐司 Toast"
+        - "甜品 Dessert"
+        - "经典咖啡 Classic"
+        - "特调咖啡 Specialty"
+        - "酸奶奶昔 Shake"
+        - "气泡水 Sparking"
+        - "英式茶 English Tea"
+        - "开放三明治"
+        - "能量餐"
+
+    - name: "品牌名称"
+      key: "brand_name"
+      required: true
+      description: "品牌的档案，必须在系统里存在"
+      type: "text"
+      default: "REFEEL·BAKERY"
+
+  specification:
+    - name: "规格1名称"
+      key: "spec1_name"
+      required: true
+      description: "单规格商品请填写规格1的相应信息"
+      type: "text"
+
+    - name: "规格1单位"
+      key: "spec1_unit"
+      required: true
+      description: "规格单位，如份、个、斤等"
+      type: "text"
+      default: "份"
+
+    - name: "规格1售价"
+      key: "spec1_price"
+      required: true
+      description: "售价，最多支持两位小数"
+      type: "float"
+
+    - name: "是否称重售卖"
+      key: "is_weight_sale"
+      required: false
+      description: "只有称重单位的才能填写'是'"
+      type: "bool"
+
+  business:
+    - name: "起售数量"
+      key: "min_sale_qty"
+      required: false
+      description: "不设置默认为1"
+      type: "float"
+
+    - name: "最大可卖数量"
+      key: "max_sale_qty"
+      required: false
+      description: "只能输入正整数"
+      type: "int"
+
+    - name: "业务场景"
+      key: "business_scene"
+      required: false
+      description: "例如'堂食+外带'，'堂食'"
+      type: "text"
+
+    - name: "辣度"
+      key: "spiciness"
+      required: false
+      description: "不辣、微微辣、微辣、中辣、重辣、爆辣"
+      type: "select"
+      options:
+        - "不辣"
+        - "微微辣"
+        - "微辣"
+        - "中辣"
+        - "重辣"
+        - "爆辣"
+
+    - name: "商品打标"
+      key: "tags"
+      required: false
+      description: "热销、特色、招牌，例如'热销+招牌'"
+      type: "text"
+
+  print:
+    - name: "打印设置"
+      key: "print_setting"
+      required: false
+      description: "打印、不打印、同销售分类设置"
+      type: "select"
+      options:
+        - "打印"
+        - "不打印"
+        - "同销售分类设置"
+
+    - name: "后厨打印档口"
+      key: "print_station"
+      required: false
+      description: "当打印设置为'打印'时必填"
+      type: "text"
+
+column_mapping:
+  "商品销售编码": 0
+  "商品销售名称": 1
+  "品牌名称": 2
+  "销售分类": 3
+  "线上分类": 4
+  "规格1单位": 5
+  "是否称重售卖": 6
+  "规格1售价": 9
+  "业务场景": 159
+  "POS上架": 160
+  "小程序上架": 161
+  "大屏上架": 162
+  "销售状态": 165
+  "是否允许打折": 169
+  "允许单独售卖": 170
+  "允许商品数量为小数": 171
+  "起售数量": 166
+  "最大可卖数量": 167
